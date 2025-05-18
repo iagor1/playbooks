@@ -1,6 +1,7 @@
 ---
 - name: Example Playbook to Call a Role
-  hosts: all
+  hosts: localhost
+  connection: local 
   become: yes
   roles:
     - Playbook-test
