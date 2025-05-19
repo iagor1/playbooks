@@ -1,5 +1,6 @@
 ---
 - name: Example Playbook to Call a Role
   become: yes
+  hosts: all
   roles:
     - pingnotlocalhost
