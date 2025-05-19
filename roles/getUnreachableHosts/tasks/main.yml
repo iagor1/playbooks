@@ -1,9 +1,9 @@
 ---
 # tasks file for getUnreachableHosts
-- name: Ping hosts
-  ping:
-  register: ping_result
-  ignore_errors: true
+# - name: Ping hosts
+#   ping:
+#   register: ping_result
+  # ignore_errors: true
 - name: Exibir hosts inalcançáveis  
   debug:
     msg: "Unreachable Hosts: {{ ansible_play_hosts_all | difference(ansible_play_hosts) }}"
