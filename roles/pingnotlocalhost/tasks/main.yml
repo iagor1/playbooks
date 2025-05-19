@@ -1,3 +1,4 @@
+---
 - name: Ping
   ping:
   register: ping_result
