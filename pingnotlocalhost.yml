@@ -2,4 +2,4 @@
 - name: Example Playbook to Call a Role
   become: yes
   roles:
-    - ping
+    - pingnotlocalhost
