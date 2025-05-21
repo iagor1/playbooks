@@ -11,4 +11,4 @@
 
 - name: Deploy
   ansible.legacy.shell:
-    cmd: "echo {{ image_tag }}"
+    cmd: "echo {{ image_tag | first }}"
