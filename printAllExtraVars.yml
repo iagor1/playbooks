@@ -1,0 +1,6 @@
+---
+- name: Example Playbook to Call a Role
+  hosts: all
+  become: yes
+  roles:
+    - printAllExtraVars
