@@ -8,3 +8,7 @@
 - name: Print Image Tag
   ansible.builtin.debug:
     msg: "Image Tag: {{ image_tag }}"
+
+- name: Deploy
+  ansible.legacy.shell:
+    cmd: "echo {{ image_tag }}"
