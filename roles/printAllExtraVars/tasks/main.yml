@@ -1,4 +1,4 @@
 ---
 - name: Mostra TUDO que foi passado via extra vars
   ansible.builtin.debug:
-    var: vars
+    msg: "{{ vars }} "
