@@ -1,4 +1,5 @@
 ---
 - name: Mostra TUDO que foi passado via extra vars
   ansible.builtin.debug:
-    msg: "{{ vars }} | map(attribute='stage')"
+    # msg: "{{ vars }} | map(attribute='stage')"
+  msg: "{{ vars }} | dict2items )"  
