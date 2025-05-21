@@ -4,3 +4,8 @@
     # msg: "{{ vars }} | map(attribute='stage')"
     # msg: " {{ vars | dict2items | selectattr('key', 'endswith', '_image') | list }}"
     msg: " {{ vars | dict2items | selectattr('key', 'match', '.*_image$') | list }}"
+    register: image-var
+
+- name: Mostra imgem
+  ansible.builtin.debug:
+    msg: "{{ image-var | map(attribute='value') | list }}"
