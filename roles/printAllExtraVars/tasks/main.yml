@@ -3,7 +3,7 @@
   ansible.builtin.set_fact:
     # msg: "{{ vars }} | map(attribute='stage')"
     # msg: " {{ vars | dict2items | selectattr('key', 'endswith', '_image') | list }}"
-    image_tag: " {{ vars | dict2items | selectattr('key', 'match', '.*_image$') | map(attribute='value') | list }}"
+    image_tag: " {{ vars | dict2items | selectattr('key', 'match', '.*_image$') | map(attribute='value') | first }}"
 
 - name: Print Image Tag
   ansible.builtin.debug:
@@ -11,4 +11,4 @@
 
 - name: Deploy
   ansible.legacy.shell:
-    cmd: "echo {{ image_tag | first }}"
+    cmd: "echo {{ image_tag }}"
