@@ -1,11 +1,6 @@
 ---
 - name: Mostra TUDO que foi passado via extra vars
-  ansible.builtin.set_fact:
+  ansible.builtin.debug:
     # msg: "{{ vars }} | map(attribute='stage')"
     # msg: " {{ vars | dict2items | selectattr('key', 'endswith', '_image') | list }}"
-    tag_img: " {{ vars | dict2items | selectattr('key', 'match', '.*_image$') | list }}"
-
-
-- name: Mostra imgem
-  ansible.builtin.debug:
-    msg: "{{ tag_img | map(attribute='value') | list }}"
+    msg: " {{ vars | dict2items | selectattr('key', 'match', '.*_image$') | map(attribute='value') | list }}"
