@@ -1,2 +1,2 @@
 - name: Verifica se o Diretório existe
-  command: echo "OK!!"
+  ansible.builtin.command: echo "OK!!"
