@@ -1,8 +1,8 @@
 ---
 - name: Ping
-  ping:
+  ansible.builtin.ping:
   register: ping_result
 
 - name: Print ping result
-  debug:
-    var: ping_result
+  ansible.builtin.debug:
+    var: "{{ ozmap_image }}"
