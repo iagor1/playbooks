@@ -15,6 +15,7 @@
 - name: Print Image Tag
   ansible.builtin.debug:
     msg: "Image Tag: {{ service_name }}"
+  when: "'stage-3' in stage or 'hotfix' in stage"
 
 # - name: Deploy
 #   ansible.legacy.shell:
