@@ -1,6 +1,7 @@
 ---
 - name: Example Playbook to Call a Role
-  become: true
   hosts: all
+  become: true
+  gather_facts: false
   roles:
-    - pingnotlocalhost
+    - disableScriptLua

@@ -1,6 +1,7 @@
 ---
 - name: Example Playbook to Call a Role
   become: true
+  gather_facts: false
   hosts: all
   roles:
-    - pingnotlocalhost
+    - fallback
