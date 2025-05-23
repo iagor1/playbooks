@@ -1,0 +1,7 @@
+---
+- name: Get job ID
+  hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - getJobId

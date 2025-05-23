@@ -1,0 +1,4 @@
+---
+- name: Print Job ID
+  ansible.builtin.set_fact:
+    job_id: "{{ lookup('env', 'JOB_ID') | int }}"
