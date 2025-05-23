@@ -1,0 +1,4 @@
+---
+- name: Cat os version
+  ansible.builtin.shell: cat /etc/issue
+  register: result

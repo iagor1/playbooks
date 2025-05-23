@@ -1,4 +1,0 @@
----
-- name: Something
-  shell: cat /etc/issue
-  register: result
