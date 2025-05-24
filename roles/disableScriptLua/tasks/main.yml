@@ -1,5 +1,6 @@
 ---
-- name: Mostra TUDO que foi passado via extra vars
+- name: disableScriptLua
+  become: true
   ansible.builtin.replace:
     path: /root/haproxy.cfg
     regexp: "^(lua-load /usr/local/etc/haproxy/srv-monitor.lua)$"
