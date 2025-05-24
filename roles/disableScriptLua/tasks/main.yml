@@ -3,5 +3,5 @@
   become: true
   ansible.builtin.replace:
     path: /root/haproxy.cfg
-    regexp: "^l.*lua$"
-    replace: '#\1'
+    regexp: "^(lua-load /usr/local/etc/haproxy/srv-monitor.lua)$"
+    replace: '# \1'
