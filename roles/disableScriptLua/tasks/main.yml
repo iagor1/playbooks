@@ -3,5 +3,10 @@
   become: true
   ansible.builtin.replace:
     path: /root/haproxy.cfg
-    regexp: "^(lua-load /usr/local/etc/haproxy/srv-monitor.lua)$"
+    regexp: '\s*^lua-load .usr.local.etc.haproxy.srv-monitor.lua\s*$'
     replace: '# \1'
+  register: disableScriptLua
+
+- name: disableScriptLua Print
+  debug:
+    msg: "debug: {{ disableScriptLua }}"
