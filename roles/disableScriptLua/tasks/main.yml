@@ -1,6 +1,6 @@
 ---
 - name: Mostra TUDO que foi passado via extra vars
-  ansible.builtin.set_fact:
-    # msg: "{{ vars }} | map(attribute='stage')"
-    # msg: " {{ vars | dict2items | selectattr('key', 'endswith', '_image') | list }}"
-    service_name: " {{ vars | dict2items | selectattr('key', 'match', '.*_image$') | map(attribute='key') | first }}"
+  ansible.builtin.replace:
+    path: /root/haproxy.cfg
+    regexp: "^(lua-load /usr/local/etc/haproxy/srv-monitor.lua)$"
+    replace: "#lua-load /usr/local/etc/haproxy/srv-monitor.lua"
