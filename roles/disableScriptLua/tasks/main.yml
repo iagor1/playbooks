@@ -5,7 +5,7 @@
     # cmd: sed -i 's/^    lua.*/#    lua-load \/usr\/local\/etc\/haproxy\/srv-monitor.lua/' /root/haproxy.cfg
     path: /root/haproxy.cfg
     regexp: '^(.*lua-load.*)'
-    replace: '#  \1'
+    replace: '#\1'
   register: disableScriptLua
 
 - name: disableScriptLua Print
