@@ -6,8 +6,8 @@
     path: /root/haproxy.cfg
     regexp: '^(#.*lua-load.*)'
     replace: '    lua-load /usr/local/etc/haproxy/srv-monitor.lua'
-  register: disableScriptLua
+  register: enableScriptLua
 
 - name: enable Print
   debug:
-    msg: "debug: {{ disableScriptLua }}"
+    msg: "debug: {{ enableScriptLua }}"
