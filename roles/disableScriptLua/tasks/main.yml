@@ -1,11 +1,11 @@
 ---
 - name: disableScriptLua
   become: true
-  ansible.builtin.shell:
-    cmd: sed -i 's/^    lua.*/#    lua-load \/usr\/local\/etc\/haproxy\/srv-monitor.lua/' /root/haproxy.cfg
-    # path: /root/haproxy.cfg
-    # regexp: 's|^\([[:blank:]]*lua-load /usr/local/etc/haproxy/srv-monitor\.lua\)'
-    # replace: '# \1'
+  ansible.builtin.replace:
+    # cmd: sed -i 's/^    lua.*/#    lua-load \/usr\/local\/etc\/haproxy\/srv-monitor.lua/' /root/haproxy.cfg
+    path: /root/haproxy.cfg
+    regexp: '^(.*lua-load.*)'
+    replace: '#  \1'
   register: disableScriptLua
 
 - name: disableScriptLua Print
