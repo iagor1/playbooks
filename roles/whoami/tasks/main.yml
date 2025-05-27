@@ -1,0 +1,4 @@
+---
+- name: Whoami
+  ansible.builtin.shell: whoami
+  register: result

@@ -1,0 +1,7 @@
+---
+- name: Example Playbook to Call a Role
+  hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - whoami
