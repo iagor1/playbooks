@@ -2,3 +2,7 @@
 - name: Whoami
   ansible.builtin.shell: whoami
   register: result
+
+- name: Print whoami result
+  ansible.builtin.debug:
+    msg: "The current user is: {{ result.stdout }}"
