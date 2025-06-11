@@ -1,6 +1,6 @@
 ---
 - name: Verificar se container IXC está rodando
-  shell: docker ps --format '{{ "{{.Names}}" }}' | grep {{ loop }} 
+  shell: docker ps --format '{{ "{{.Names}}" }}' | grep {{ item }} 
   register: containers_status
   loop: 
     - devoz-ixc
