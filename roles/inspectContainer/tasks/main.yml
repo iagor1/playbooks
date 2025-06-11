@@ -4,6 +4,10 @@
   register: ixc_status
   # ignore_errors: true
 
+- name: Verificar se container Sgp está rodando
+  shell: docker ps --format '{{ "{{.Names}}" }}' | grep devoz-sgp 
+  register: sgp_status
+
 - name: Print result of IXC status
   ansible.builtin.debug:
     msg: "Result: {{ ixc_status }}"
@@ -12,3 +16,8 @@
   ansible.builtin.debug:
     msg: "IXC is running"
   when: "'devoz-ixc' in ixc_status.stdout"
+
+- name: Print if sgp is running
+  ansible.builtin.debug:
+    msg: "sgp is running"
+  when: "'devoz-sgp' in sgp_status.stdout"
