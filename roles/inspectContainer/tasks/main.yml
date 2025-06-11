@@ -2,15 +2,17 @@
 - name: Verificar se container IXC está rodando
   shell: docker ps --format '{{ "{{.Names}}" }}' | grep devoz-ixc 
   register: ixc_status
-  # ignore_errors: true
+  ignore_errors: true
 
 - name: Verificar se container Sgp está rodando
   shell: docker ps --format '{{ "{{.Names}}" }}' | grep devoz-sgp 
   register: sgp_status
+  ignore_errors: true
 
 - name: Print result of IXC status
   ansible.builtin.debug:
     msg: "Result: {{ ixc_status }}"
+  when: ixc_status.rc == 0
 
 - name: Print if is running
   ansible.builtin.debug:
