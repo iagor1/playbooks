@@ -3,8 +3,12 @@
   shell: docker ps --format '{{ "{{.Names}}" }}'
   register: ixc_status
   # ignore_errors: true
-  register: ixc_status
 
 - name: Print result of IXC status
   ansible.builtin.debug:
     msg: "Result: {{ ixc_status }}"
+
+- name: Print if is running
+  ansible.builtin.debug:
+    msg: "IXC is running"
+  when: "'devoz-ixc' in ixc_status.stdout"
