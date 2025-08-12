@@ -5,4 +5,4 @@
 
 - name: Print ping result
   ansible.builtin.debug:
-    var: "{{ ozmap_image }}"
+    var: "{{ ping_result }}"
