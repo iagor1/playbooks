@@ -1,6 +1,6 @@
 ---
 - name: Example Playbook to Call a Role
-  hosts: all
+  hosts: localhost
   become: true
   gather_facts: false
   roles:
