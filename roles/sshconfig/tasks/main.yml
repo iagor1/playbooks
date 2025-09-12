@@ -7,7 +7,7 @@
 
 - name: Disable password authentication in SSH in 50-cloud-init.conf
   become: true
-  ansible.builtin.replace:
+  ansible.builtin.lineinfile:
     path: /etc/ssh/sshd_config.d/50-cloud-init.conf
     regexp: '^PasswordAuthentication yes'
     line: 'PasswordAuthentication no'
