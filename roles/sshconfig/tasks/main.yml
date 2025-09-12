@@ -13,6 +13,7 @@
     line: 'PasswordAuthentication no'
     backup: yes
   when: file_exists.stat.exists
+  register: disable_pwd_auth_50_cloud_init_conf
 
 - name: Disable password authentication in SSH in sshd_config
   become: true
@@ -22,3 +23,14 @@
     line: 'PasswordAuthentication no'
     backup: yes
   when: not file_exists.stat.exists
+  register: disable_pwd_auth_sshd_config
+
+- name: Debug SSH configuration changes
+  debug:
+    msg: "sshd_config changed"
+  when: disable_pwd_auth_sshd_config.changed
+
+- name: Debug SSH configuration changes
+  debug:
+    msg: "50-cloud-init.conf changed"
+  when: disable_pwd_auth_50_cloud_init_conf.changed
