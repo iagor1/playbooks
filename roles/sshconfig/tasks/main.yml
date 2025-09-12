@@ -2,7 +2,7 @@
 - name: verifica arq
   become: true
   ansible.builtin.stat:
-    path: /etc/ssh/sshd_config.d/50-cloud-init.conf
+    path: /etc/ssh/sshd_config.d/3231-cloud-init.conf
   register: file_exists
 
 - name: Disable password authentication in SSH in 50-cloud-init.conf
@@ -22,4 +22,4 @@
 #     regexp: '^#PasswordAuthentication yes'
 #     line: 'PasswordAuthentication no'
 #     backup: yes
-#   when: file_exists.stat.exists
+#   when: file_exists.stat.
