@@ -14,12 +14,11 @@
     backup: yes
   when: file_exists.stat.exists
 
-
-# - name: Disable password authentication in SSH in sshd_config
-#   become: true
-#   ansible.builtin.lineinfile:
-#     path: /etc/ssh/sshd_config
-#     regexp: '^#PasswordAuthentication yes'
-#     line: 'PasswordAuthentication no'
-#     backup: yes
-#   when: file_exists.stat.
+- name: Disable password authentication in SSH in sshd_config
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#PasswordAuthentication yes'
+    line: 'PasswordAuthentication no'
+    backup: yes
+  when: not file_exists.stat.exists
