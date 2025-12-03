@@ -1,0 +1,7 @@
+- name: Playbook for Get Unreachable Hosts
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  run_once: true
+  roles:
+    - getUnreachableHosts

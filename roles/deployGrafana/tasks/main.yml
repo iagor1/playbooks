@@ -1,0 +1,11 @@
+---
+- name: teste
+  become: true
+  shell: 
+    ls -la /home/iagor
+
+  # register: disableScriptLua
+
+# - name: disableScriptLua Print
+#   debug:
+#     msg: "debug: {{ disableScriptLua }}"
